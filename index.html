@@ -95,6 +95,10 @@ header .wrap { display: flex; align-items: center; gap: 16px; height: 64px; }
 .brand:hover { text-decoration: none; }
 .brand img { width: 32px; height: 32px; }
 .brand small { color: rgba(255, 255, 255, .6); font-weight: 400; }
+.beta {
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  background: var(--brand-green); color: var(--brand-dark); padding: 2px 7px; border-radius: 6px; vertical-align: 2px;
+}
 header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .lang { display: flex; background: rgba(255, 255, 255, .12); border-radius: 999px; padding: 3px; }
 .lang button {
@@ -110,10 +114,17 @@ header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .btn:hover { background: var(--cta-hover); text-decoration: none; }
 .btn svg { width: 18px; height: 18px; }
 .btn.small { padding: 7px 16px; font-size: 15px; }
+.btn.secondary { background: var(--text); color: var(--bg); }
+.btn.secondary:hover { background: color-mix(in srgb, var(--text) 85%, var(--bg)); }
 
 /* Первый экран */
 .hero { padding: 88px 0 40px; text-align: center; overflow: hidden; }
 .hero h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.04; }
+.hero .badge {
+  display: inline-block; margin-bottom: 22px; font-size: 14px; font-weight: 600;
+  color: var(--link); background: var(--green-soft); padding: 6px 14px; border-radius: 999px;
+}
+.hero a.badge[href]:hover { text-decoration: underline; }
 .hero .lead { max-width: 720px; }
 .hero .actions { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .hero .btn { font-size: 18px; padding: 15px 30px; }
@@ -199,6 +210,12 @@ header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .install p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .install-cta { text-align: center; margin-top: 36px; }
 
+/* Отзывы */
+.feedback .box {
+  background: var(--panel-green); border-radius: var(--radius); padding: clamp(32px, 6vw, 64px); text-align: center;
+}
+.feedback .lead { margin-bottom: 28px; }
+
 /* FAQ */
 .faq { max-width: 780px; margin: 48px auto 0; }
 .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
@@ -242,7 +259,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
   <div class="wrap">
     <a class="brand" href="#top">
       <img src="images/icon.png" alt="" width="32" height="32">
-      <span>Text Enhancer <small>by TEHNOKRAT</small></span>
+      <span>Text Enhancer <span class="beta">Beta</span> <small>by TEHNOKRAT</small></span>
     </a>
     <nav>
       <div class="lang" role="group" aria-label="Language">
@@ -260,6 +277,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
 <main id="top">
   <section class="hero">
     <div class="wrap">
+      <a class="badge" href="#feedback" data-i18n="hero.badge">Бета-версія — допомагайте нам її покращити</a>
       <h1 data-i18n="hero.title">Пишіть швидко.<br>Надсилайте бездоганно.</h1>
       <p class="lead" data-i18n="hero.lead">Виправлення помилок, діловий стиль, переклад і відповіді клієнтам — у будь-якій програмі на Mac. Виділіть текст і натисніть <kbd>⌘T</kbd>.</p>
       <div class="actions">
@@ -458,10 +476,24 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
     </div>
   </section>
 
+  <section class="feedback" id="feedback" hidden>
+    <div class="wrap">
+      <div class="box">
+        <h2 data-i18n="fb.title">Знайшли помилку чи маєте ідею?</h2>
+        <p class="lead" data-i18n="fb.text">Text Enhancer у бета-версії, і саме ваші відгуки визначають, що ми зробимо далі. Розкажіть, чого бракує, що незручно або що зламалося, — ми читаємо кожне повідомлення.</p>
+        <a class="btn secondary feedback-link" href="#" target="_blank" rel="noopener"><span data-i18n="fb.button">Написати нам</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
       <h2 data-i18n="q.title">Питання й відповіді</h2>
       <div class="faq">
+        <details>
+          <summary data-i18n="q.0.q">Що означає «бета»?</summary>
+          <p data-i18n="q.0.a">Застосунок уже щодня працює в нашій команді, але ми ще допрацьовуємо його й часто випускаємо оновлення. Можливі дрібні недоліки — якщо щось піде не так, напишіть нам.</p>
+        </details>
         <details>
           <summary data-i18n="q.1.q">Це справді безкоштовно?</summary>
           <p data-i18n="q.1.a">Так, застосунок безкоштовний. Хмарні моделі ви оплачуєте напряму в сервісі за своїм ключем API — зазвичай це частки цента за запит. LM Studio і локальні моделі безкоштовні.</p>
@@ -504,12 +536,15 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
 <script>
 const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/latest/download/Text-Enhancer.zip";
 const LATEST = "https://api.github.com/repos/alexeylg2/text-enhancer-releases/releases/latest";
+// Форма отзывов и сообщений об ошибках (Tally). Пустая строка скрывает блок отзывов.
+const FEEDBACK = "https://tally.so/r/M11B7E";
 
 // Украинские тексты берутся из разметки, здесь — только английские.
 const EN = {
   "nav.download": "Download",
   "hero.title": "Type fast.<br>Send it flawless.",
   "hero.lead": "Fix mistakes, switch to a business tone, translate and answer customers — in any app on your Mac. Select text and press <kbd>⌘T</kbd>.",
+  "hero.badge": "Beta — help us make it better",
   "hero.download": "Download for macOS",
   "hero.meta": "Free · macOS 14+ · Apple Silicon and Intel",
   "how.title": "Three steps to better text",
@@ -559,7 +594,12 @@ const EN = {
   "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
   "i.4.title": "Grant access and connect a model",
   "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio.",
+  "fb.title": "Found a bug or have an idea?",
+  "fb.text": "Text Enhancer is in beta, and your feedback decides what we build next. Tell us what's missing, what's awkward or what broke — we read every message.",
+  "fb.button": "Write to us",
   "q.title": "Questions and answers",
+  "q.0.q": "What does “beta” mean?",
+  "q.0.a": "The app is already used every day by our team, but we're still polishing it and ship updates often. Small rough edges are possible — if something goes wrong, write to us.",
   "q.1.q": "Is it really free?",
   "q.1.a": "Yes, the app is free. You pay cloud providers directly through your own API key — usually a fraction of a cent per request. LM Studio and local models are free.",
   "q.2.q": "Which Mac do I need?",
@@ -618,6 +658,8 @@ function setLang(lang) {
   document.title = META[lang].title;
   document.querySelector('meta[name="description"]').content = META[lang].description;
   document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  // Язык и источник уходят в скрытые поля формы — в ответах видно, откуда пришло сообщение.
+  if (FEEDBACK) document.querySelectorAll("a.feedback-link").forEach(a => { a.href = `${FEEDBACK}?lang=${lang}&utm_source=site`; });
   showVersion(lang);
   try { localStorage.setItem("lang", lang); } catch (e) {}
 }
@@ -643,6 +685,11 @@ function showVersion(lang) {
 }
 
 document.querySelectorAll("a.download").forEach(a => { a.href = DOWNLOAD; });
+if (FEEDBACK) {
+  document.getElementById("feedback").hidden = false;
+} else {
+  document.querySelector(".hero .badge").removeAttribute("href"); // без блока отзывов плашке некуда вести
+}
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 setLang(initialLang());
 
