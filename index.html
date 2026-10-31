@@ -28,6 +28,7 @@
   --cta-hover: #d9521d;
   --chip-active-bg: var(--brand-dark);
   --chip-active-fg: #ffffff;
+  --fixed: #b4441a;         /* оранжевый бренда, затемнён до 4.5:1 — метка «Виправлено» */
   --shot-shadow: drop-shadow(0 30px 40px rgba(30, 30, 30, .16)) drop-shadow(0 4px 10px rgba(30, 30, 30, .08));
   --panel-slate: linear-gradient(135deg, #eef1f6, #e4e9f1);
   --panel-orange: linear-gradient(135deg, #fdf1ea, #fae5da);
@@ -48,6 +49,7 @@
     --icon: #9aa8c6;
     --chip-active-bg: var(--brand-green);
     --chip-active-fg: #1f1f21;
+    --fixed: #f59a74;
     --shot-shadow: drop-shadow(0 30px 40px rgba(0, 0, 0, .5)) drop-shadow(0 4px 10px rgba(0, 0, 0, .3));
     --panel-slate: linear-gradient(135deg, #2b3140, #262b37);
     --panel-orange: linear-gradient(135deg, #3b2a22, #33241e);
@@ -210,6 +212,32 @@ header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .install p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .install-cta { text-align: center; margin-top: 36px; }
 
+/* Что нового */
+#changes { padding-bottom: 48px; }
+.changes { max-width: 780px; margin: 48px auto 0; }
+.release { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.release:first-child { padding-top: 0; }
+.release h3 { font-size: 19px; }
+.release time { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+.release ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.release li { display: grid; grid-template-columns: 108px 1fr; gap: 12px; align-items: baseline; }
+.kind {
+  text-align: center; white-space: nowrap;
+  font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 6px; position: relative; top: -1px;
+}
+.kind.new { background: var(--green-soft); color: var(--link); }
+.kind.improved { background: rgba(102, 119, 154, .16); color: var(--muted); }
+.kind.fixed { background: rgba(236, 97, 42, .14); color: var(--fixed); }
+.changes-more { text-align: center; margin-top: 28px; }
+.more {
+  font: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 9px 20px;
+}
+.more:hover { border-color: var(--brand-green); }
+.meta a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.meta a:hover { color: var(--link); text-decoration-color: currentColor; }
+
 /* Отзывы */
 .feedback .box {
   background: var(--panel-green); border-radius: var(--radius); padding: clamp(32px, 6vw, 64px); text-align: center;
@@ -238,6 +266,9 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
   .case, .case:nth-of-type(even) { grid-template-columns: 1fr; gap: 28px; padding: 40px 0; }
   .case:nth-of-type(even) .case-text { order: 0; }
   .privacy .box { grid-template-columns: 1fr; gap: 20px; }
+  .release { grid-template-columns: 1fr; gap: 12px; }
+  .release > div:first-child { display: flex; align-items: baseline; gap: 10px; }
+  .release time { margin-top: 0; }
   .chips { top: 64px; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-left: 24px; padding-right: 24px; margin-left: -24px; margin-right: -24px; }
   .chips::-webkit-scrollbar { display: none; }
   .chip { flex: none; }
@@ -248,6 +279,8 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
   .brand small { display: none; }
   .btn.small .label { display: none; }
   .install { grid-template-columns: 1fr; }
+  .release li { grid-template-columns: 1fr; gap: 4px; }
+  .kind { justify-self: start; }
   .hero { padding-top: 56px; }
   .chips { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
 }
@@ -476,6 +509,17 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
     </div>
   </section>
 
+  <section id="changes">
+    <div class="wrap">
+      <h2 data-i18n="ch.title">Що нового</h2>
+      <p class="lead" data-i18n="ch.lead">Ми часто випускаємо оновлення, і застосунок сам пропонує їх встановити. Ось що змінилося останнім часом.</p>
+      <div class="changes"></div>
+      <div class="changes-more">
+        <button type="button" class="more" aria-expanded="false"></button>
+      </div>
+    </div>
+  </section>
+
   <section class="feedback" id="feedback" hidden>
     <div class="wrap">
       <div class="box">
@@ -527,6 +571,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
   <div class="wrap">
     <span>Text Enhancer by <a href="https://tehnokrat.ua/?utm_source=text-enhancer&amp;utm_medium=site&amp;utm_content=footer">TEHNOKRAT</a> · © 2026</span>
     <div class="links">
+      <a href="#changes" data-i18n="ch.title">Що нового</a>
       <a href="https://github.com/alexeylg2/text-enhancer-releases/releases" data-i18n="ft.releases">Усі версії</a>
       <a href="https://tehnokrat.ua/?utm_source=text-enhancer&amp;utm_medium=site&amp;utm_content=footer">tehnokrat.ua</a>
     </div>
@@ -538,6 +583,92 @@ const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/l
 const LATEST = "https://api.github.com/repos/alexeylg2/text-enhancer-releases/releases/latest";
 // Форма отзывов и сообщений об ошибках (Tally). Пустая строка скрывает блок отзывов.
 const FEEDBACK = "https://tally.so/r/M11B7E";
+
+// «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
+// Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
+const CHANGES = [
+  { v: "0.5.0 (36)", date: "2026-10-31", items: [
+    { kind: "improved",
+      ua: "Вікно, закрите клавішею Esc, повертається за <kbd>⌘T</kbd> таким, яким ви його залишили, — з результатом і обраним стилем. Нове виділення, як і раніше, відкриває вікно з новим текстом.",
+      en: "Close the window with Esc and press <kbd>⌘T</kbd> again — it comes back as you left it, with the result and the chosen style. A new selection still starts fresh." },
+  ] },
+  { v: "0.5.0 (35)", date: "2026-10-30", items: [
+    { kind: "new",
+      ua: "Стиль за замовчуванням (Налаштування → Загальні): <kbd>⌘T</kbd> одразу обробляє ним виділений текст, а інший стиль можна обрати у вікні, як завжди.",
+      en: "Default style (Settings → General): <kbd>⌘T</kbd> runs it on the selected text right away, and you can still pick another style in the window." },
+    { kind: "improved",
+      ua: "Якщо вікно відкривається без тексту, курсор одразу стоїть у полі для введення.",
+      en: "When the window opens without text, the cursor is already in the input field." },
+  ] },
+  { v: "0.5.0 (32)", date: "2026-10-29", items: [
+    { kind: "new",
+      ua: "Стилі-відповіді клієнтам відповідають будь-якою з восьми мов перекладу, а не лише українською чи російською.",
+      en: "Customer reply styles can answer in any of the eight translation languages, not only Ukrainian or Russian." },
+  ] },
+  { v: "0.5.0 (31)", date: "2026-10-29", items: [
+    { kind: "new",
+      ua: "Кнопки експорту й імпорту під списком стилів (Налаштування → Стилі).",
+      en: "Export and import buttons under the style list (Settings → Styles)." },
+  ] },
+  { v: "0.5.0 (30)", date: "2026-10-29", items: [
+    { kind: "fixed",
+      ua: "Застосунок більше не закривається несподівано під час видалення стилю.",
+      en: "The app no longer quits unexpectedly when you delete a style." },
+  ] },
+  { v: "0.5.0 (29)", date: "2026-10-29", items: [
+    { kind: "new",
+      ua: "Вікно «Про Text Enhancer» у меню застосунку.",
+      en: "An About Text Enhancer window in the app menu." },
+  ] },
+  { v: "0.5.0 (28)", date: "2026-10-28", items: [
+    { kind: "improved",
+      ua: "Вибір моделі внизу вікна з'являється після вибору стилю — адже в кожного стилю своя модель.",
+      en: "The model menu at the bottom of the window appears once you pick a style, since each style has its own model." },
+  ] },
+  { v: "0.5.0 (27)", date: "2026-10-27", items: [
+    { kind: "new",
+      ua: "Перенесення налаштувань і стилів: Налаштування → Загальні зберігає їх у файл, який можна відкрити на іншому Mac або передати колегам. Ключі API та історія у файл не потрапляють.",
+      en: "Transfer settings and styles: Settings → General saves them to a file you can open on another Mac or hand to colleagues. API keys and history are not included." },
+    { kind: "improved",
+      ua: "База знань: одна кнопка «Додати документи або папку…», а якщо macOS не дає доступу до папки (наприклад, в iCloud Drive), налаштування пояснюють, де його надати.",
+      en: "Knowledge base: a single “Add documents or folder…” button, and if macOS blocks access to a folder (for example, in iCloud Drive), settings explain where to allow it." },
+  ] },
+  { v: "0.5.0 (26)", date: "2026-10-25", items: [
+    { kind: "new",
+      ua: "Підтримка Google Gemini — додайте ключ у Налаштування → Моделі.",
+      en: "Google Gemini support — add a key in Settings → Models." },
+    { kind: "improved",
+      ua: "Якщо сервіс прибере обрану модель, застосунок сам перейде на доступну й повторить запит.",
+      en: "If a provider removes the chosen model, the app switches to an available one and retries." },
+    { kind: "improved",
+      ua: "Claude за замовчуванням працює на моделі Sonnet — швидше й дешевше для редагування тексту.",
+      en: "Claude now defaults to Sonnet, which is faster and cheaper for editing text." },
+  ] },
+  { v: "0.5.0 (24)", date: "2026-10-25", items: [
+    { kind: "new",
+      ua: "Кнопка «У вихідний текст» (<kbd>⌘E</kbd>): результат можна обробити ще одним стилем — наприклад, виправити, а потім перекласти.",
+      en: "A To source button (<kbd>⌘E</kbd>): process the result with another style — say, fix it and then translate." },
+    { kind: "new",
+      ua: "Довідник клавіш у меню застосунку — з нього можна й виконати доступні команди.",
+      en: "A keyboard shortcuts list in the app menu — you can run the available commands from it too." },
+    { kind: "improved",
+      ua: "Вікно відкривається по центру екрана й не лишається поверх інших програм, коли ви переходите в іншу.",
+      en: "The window opens centred on the screen and no longer stays on top when you switch to another app." },
+  ] },
+  { v: "0.5.0 (18)", date: "2026-10-24", items: [
+    { kind: "new",
+      ua: "Оновлення в один клік: застосунок сам перевіряє нові версії й встановлює їх, зберігаючи налаштування, ключі та дозволи.",
+      en: "One-click updates: the app checks for new versions itself and installs them, keeping your settings, keys and permissions." },
+  ] },
+  { v: "0.5.0 (17)", date: "2026-10-24", items: [
+    { kind: "new", ua: "Перший публічний реліз.", en: "First public release." },
+  ] },
+];
+const CHANGES_SHOWN = 3; // остальные версии — под кнопкой
+const KINDS = {
+  ua: { new: "Нове", improved: "Покращено", fixed: "Виправлено" },
+  en: { new: "New", improved: "Improved", fixed: "Fixed" },
+};
 
 // Украинские тексты берутся из разметки, здесь — только английские.
 const EN = {
@@ -594,6 +725,8 @@ const EN = {
   "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
   "i.4.title": "Grant access and connect a model",
   "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio.",
+  "ch.title": "What's new",
+  "ch.lead": "We ship updates often, and the app offers to install them itself. Here's what changed recently.",
   "fb.title": "Found a bug or have an idea?",
   "fb.text": "Text Enhancer is in beta, and your feedback decides what we build next. Tell us what's missing, what's awkward or what broke — we read every message.",
   "fb.button": "Write to us",
@@ -661,7 +794,30 @@ function setLang(lang) {
   // Язык и источник уходят в скрытые поля формы — в ответах видно, откуда пришло сообщение.
   if (FEEDBACK) document.querySelectorAll("a.feedback-link").forEach(a => { a.href = `${FEEDBACK}?lang=${lang}&utm_source=site`; });
   showVersion(lang);
+  renderChanges(lang);
   try { localStorage.setItem("lang", lang); } catch (e) {}
+}
+
+function formatDate(value, lang) {
+  return new Date(value).toLocaleDateString(lang === "en" ? "en-GB" : "uk-UA", { day: "numeric", month: "long", year: "numeric" });
+}
+
+let changesExpanded = false;
+
+function renderChanges(lang) {
+  const list = changesExpanded ? CHANGES : CHANGES.slice(0, CHANGES_SHOWN);
+  document.querySelector(".changes").innerHTML = list.map(r => `
+    <article class="release">
+      <div><h3>${r.v}</h3><time datetime="${r.date}">${formatDate(r.date, lang)}</time></div>
+      <ul>${r.items.map(i => `<li><span class="kind ${i.kind}">${KINDS[lang][i.kind]}</span><span>${i[lang]}</span></li>`).join("")}</ul>
+    </article>`).join("");
+  const more = document.querySelector(".changes-more");
+  more.hidden = CHANGES.length <= CHANGES_SHOWN;
+  const button = more.querySelector("button");
+  button.setAttribute("aria-expanded", String(changesExpanded));
+  button.textContent = changesExpanded
+    ? (lang === "en" ? "Show fewer" : "Згорнути")
+    : (lang === "en" ? `All versions (${CHANGES.length})` : `Усі версії (${CHANGES.length})`);
 }
 
 function initialLang() {
@@ -674,14 +830,16 @@ function initialLang() {
   return /^(uk|ru)\b/i.test(navigator.language || "") ? "ua" : "en";
 }
 
-// «v0.5.0-31» → «0.5.0 (31)»
+// «v0.5.0-31» → «0.5.0 (31)»; версия ведёт к разделу «Що нового»
 function showVersion(lang) {
   const el = document.querySelector(".version");
   if (!release) { el.textContent = ""; return; }
   const m = /^v?([\d.]+)-(\d+)$/.exec(release.tag_name || "");
   const version = m ? `${m[1]} (${m[2]})` : release.tag_name;
-  const date = new Date(release.published_at).toLocaleDateString(lang === "en" ? "en-GB" : "uk-UA", { day: "numeric", month: "long", year: "numeric" });
-  el.textContent = ` · ${lang === "en" ? "version" : "версія"} ${version}, ${date}`;
+  const link = document.createElement("a");
+  link.href = "#changes";
+  link.textContent = `${lang === "en" ? "version" : "версія"} ${version}, ${formatDate(release.published_at, lang)}`;
+  el.replaceChildren(" · ", link);
 }
 
 document.querySelectorAll("a.download").forEach(a => { a.href = DOWNLOAD; });
@@ -691,6 +849,10 @@ if (FEEDBACK) {
   document.querySelector(".hero .badge").removeAttribute("href"); // без блока отзывов плашке некуда вести
 }
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+document.querySelector(".changes-more button").addEventListener("click", () => {
+  changesExpanded = !changesExpanded;
+  renderChanges(document.documentElement.lang === "en" ? "en" : "ua");
+});
 setLang(initialLang());
 
 fetch(LATEST).then(r => r.ok ? r.json() : null).then(data => {
