@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Text Enhancer — кращий текст у будь-якій програмі на Mac</title>
+<title>Harno — кращий текст у будь-якій програмі на Mac</title>
 <meta name="description" content="Безкоштовний застосунок для Mac: виправлення помилок, діловий стиль, переклад і відповіді клієнтам у будь-якій програмі — виділіть текст і натисніть ⌘T.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <style>
@@ -292,7 +292,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
   <div class="wrap">
     <a class="brand" href="#top">
       <img src="images/icon.png" alt="" width="32" height="32">
-      <span>Text Enhancer <span class="beta">Beta</span> <small>by TEHNOKRAT</small></span>
+      <span>Harno <span class="beta">Beta</span> <small>by TEHNOKRAT</small></span>
     </a>
     <nav>
       <div class="lang" role="group" aria-label="Language">
@@ -488,11 +488,11 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
       <ol class="install">
         <li>
           <h3 data-i18n="i.1.title">Завантажте</h3>
-          <p data-i18n="i.1.text">Натисніть «Завантажити» і розпакуйте архів Text-Enhancer.zip.</p>
+          <p data-i18n="i.1.text">Натисніть «Завантажити» і розпакуйте архів Harno.zip.</p>
         </li>
         <li>
           <h3 data-i18n="i.2.title">Перенесіть у «Програми»</h3>
-          <p data-i18n="i.2.text">Перетягніть Text Enhancer у папку «Програми» і запустіть.</p>
+          <p data-i18n="i.2.text">Перетягніть Harno у папку «Програми» і запустіть.</p>
         </li>
         <li>
           <h3 data-i18n="i.3.title">Дозвольте запуск</h3>
@@ -524,7 +524,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
     <div class="wrap">
       <div class="box">
         <h2 data-i18n="fb.title">Знайшли помилку чи маєте ідею?</h2>
-        <p class="lead" data-i18n="fb.text">Text Enhancer у бета-версії, і саме ваші відгуки визначають, що ми зробимо далі. Розкажіть, чого бракує, що незручно або що зламалося, — ми читаємо кожне повідомлення.</p>
+        <p class="lead" data-i18n="fb.text">Harno у бета-версії, і саме ваші відгуки визначають, що ми зробимо далі. Розкажіть, чого бракує, що незручно або що зламалося, — ми читаємо кожне повідомлення.</p>
         <a class="btn secondary feedback-link" href="#" target="_blank" rel="noopener"><span data-i18n="fb.button">Написати нам</span></a>
       </div>
     </div>
@@ -569,17 +569,17 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
 
 <footer>
   <div class="wrap">
-    <span>Text Enhancer by <a href="https://tehnokrat.ua/?utm_source=text-enhancer&amp;utm_medium=site&amp;utm_content=footer">TEHNOKRAT</a> · © 2026</span>
+    <span>Harno by <a href="https://tehnokrat.ua/?utm_source=harno&amp;utm_medium=site&amp;utm_content=footer">TEHNOKRAT</a> · © 2026</span>
     <div class="links">
       <a href="#changes" data-i18n="ch.title">Що нового</a>
       <a href="https://github.com/alexeylg2/text-enhancer-releases/releases" data-i18n="ft.releases">Усі версії</a>
-      <a href="https://tehnokrat.ua/?utm_source=text-enhancer&amp;utm_medium=site&amp;utm_content=footer">tehnokrat.ua</a>
+      <a href="https://tehnokrat.ua/?utm_source=harno&amp;utm_medium=site&amp;utm_content=footer">tehnokrat.ua</a>
     </div>
   </div>
 </footer>
 
 <script>
-const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/latest/download/Text-Enhancer.zip";
+const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/latest/download/Harno.zip";
 const LATEST = "https://api.github.com/repos/alexeylg2/text-enhancer-releases/releases/latest";
 // Форма отзывов и сообщений об ошибках (Tally). Пустая строка скрывает блок отзывов.
 const FEEDBACK = "https://tally.so/r/M11B7E";
@@ -587,6 +587,11 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (42)", date: "2026-11-01", items: [
+    { kind: "new",
+      ua: "Text Enhancer тепер називається Harno. Налаштування, стилі, ключі API та дозволи зберігаються; після оновлення застосунок сам перейменовується на Harno у «Програмах» і один раз перезапускається.",
+      en: "Text Enhancer is now called Harno. Settings, styles, API keys and permissions carry over; after the update the app renames itself to Harno in Applications and relaunches once." },
+  ] },
   { v: "0.5.0 (40)", date: "2026-11-01", items: [
     { kind: "new",
       ua: "Тема оформлення (Налаштування → Загальні → Оформлення): як у системі, світла або темна. Світла й темна не залежать від налаштувань macOS.",
@@ -728,9 +733,9 @@ const EN = {
   "p.text": "With LM Studio, your text never leaves your Mac. Cloud models receive it directly, with no servers in between, and API keys are stored in the macOS Keychain. Apart from checking GitHub for updates, the app sends nothing and collects nothing about you.",
   "i.title": "Set up in two minutes",
   "i.1.title": "Download",
-  "i.1.text": "Click Download and unzip Text-Enhancer.zip.",
+  "i.1.text": "Click Download and unzip Harno.zip.",
   "i.2.title": "Move to Applications",
-  "i.2.text": "Drag Text Enhancer into the Applications folder and open it.",
+  "i.2.text": "Drag Harno into the Applications folder and open it.",
   "i.3.title": "Allow it to open",
   "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
   "i.4.title": "Grant access and connect a model",
@@ -738,7 +743,7 @@ const EN = {
   "ch.title": "What's new",
   "ch.lead": "We ship updates often, and the app offers to install them itself. Here's what changed recently.",
   "fb.title": "Found a bug or have an idea?",
-  "fb.text": "Text Enhancer is in beta, and your feedback decides what we build next. Tell us what's missing, what's awkward or what broke — we read every message.",
+  "fb.text": "Harno is in beta, and your feedback decides what we build next. Tell us what's missing, what's awkward or what broke — we read every message.",
   "fb.button": "Write to us",
   "q.title": "Questions and answers",
   "q.0.q": "What does “beta” mean?",
@@ -756,7 +761,7 @@ const EN = {
   "q.6.q": "How do updates work?",
   "q.6.a": "The app checks for updates itself and installs them in one click — your settings, keys and permissions are kept.",
   "ft.releases": "All versions",
-  "alt.hero": "Text Enhancer window: an emotional message rewritten in a business tone",
+  "alt.hero": "Harno window: an emotional message rewritten in a business tone",
   "alt.1": "Fix mistakes: a message with typos and its corrected version",
   "alt.2": "Business tone: an angry message to a supplier and its polite version",
   "alt.3": "Translate: a message in English and its German translation",
@@ -765,7 +770,7 @@ const EN = {
   "alt.6": "Shakespeare: a note about a parked car rewritten in Shakespearean English",
 };
 const UA_ALT = {
-  "alt.hero": "Вікно Text Enhancer: емоційне повідомлення, переписане діловим стилем",
+  "alt.hero": "Вікно Harno: емоційне повідомлення, переписане діловим стилем",
   "alt.1": "Виправити: повідомлення з одруківками та виправлений варіант",
   "alt.2": "Діловий стиль: різке повідомлення постачальнику та ввічливий варіант",
   "alt.3": "Переклад: повідомлення українською та переклад англійською",
@@ -776,7 +781,7 @@ const UA_ALT = {
 const META = {
   ua: { title: document.title, description: document.querySelector('meta[name="description"]').content },
   en: {
-    title: "Text Enhancer — better text in any app on your Mac",
+    title: "Harno — better text in any app on your Mac",
     description: "A free Mac app that fixes mistakes, switches to a business tone, translates and answers customers in any app — select text and press ⌘T.",
   },
 };
