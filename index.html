@@ -331,7 +331,10 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         <span class="meta"><span data-i18n="hero.meta">Безкоштовно · macOS 14+ · Apple Silicon та Intel</span><span class="version"></span></span>
       </div>
       <div class="hero-shot">
-        <img class="shot" src="images/ua/case-2-business.webp" data-en="images/en/case-2-business.webp" width="780" height="403" alt="" data-i18n-alt="alt.hero">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-2-business-dark.webp" data-en="images/en/case-2-business-dark.webp">
+          <img class="shot" src="images/ua/case-2-business.webp" data-en="images/en/case-2-business.webp" width="780" height="400" alt="" data-i18n-alt="alt.hero">
+        </picture>
       </div>
     </div>
   </section>
@@ -365,22 +368,25 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
       <p class="lead" data-i18n="cases.lead">Стиль — це готова інструкція для моделі. Ось шість прикладів, а власний стиль можна створити за хвилину.</p>
 
       <nav class="chips" aria-label="Styles">
-        <a class="chip" href="#case-1"><b data-i18n="s.1">Виправити</b> <span>⌘1</span></a>
+        <a class="chip" href="#case-1"><b data-i18n="s.1">Граматика</b> <span>⌘1</span></a>
         <a class="chip" href="#case-2"><b data-i18n="s.2">Діловий стиль</b> <span>⌘2</span></a>
-        <a class="chip" href="#case-3"><b data-i18n="s.3">Переклад</b> <span>⌘3</span></a>
-        <a class="chip" href="#case-4"><b data-i18n="s.4">Відповідь клієнту</b> <span>⌘4</span></a>
-        <a class="chip" href="#case-5"><b data-i18n="s.5">Структурувати</b> <span>⌘5</span></a>
+        <a class="chip" href="#case-3"><b data-i18n="s.3">Переклад EN</b> <span>⌘3</span></a>
+        <a class="chip" href="#case-4"><b data-i18n="s.4">Переклад UA</b> <span>⌘4</span></a>
+        <a class="chip" href="#case-5"><b data-i18n="s.5">Відповідь клієнту</b> <span>⌘5</span></a>
         <a class="chip" href="#case-6"><b data-i18n="s.6">Колорит</b> <span>⌘6</span></a>
       </nav>
 
       <article class="case" id="case-1">
         <div class="case-text">
-          <span class="tag"><span data-i18n="s.1">Виправити</span> ⌘1</span>
+          <span class="tag"><span data-i18n="s.1">Граматика</span> ⌘1</span>
           <h3 data-i18n="c.1.title">Пишіть як зручно — надсилайте без помилок</h3>
           <p data-i18n="c.1.text">Виправляє одруківки, пунктуацію й великі літери, але зберігає ваші слова й тон. Нічого не переписує зайвого.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-1-proofread.webp" data-en="images/en/case-1-proofread.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.1">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-1-grammar-dark.webp" data-en="images/en/case-1-grammar-dark.webp">
+            <img class="shot" src="images/ua/case-1-grammar.webp" data-en="images/en/case-1-grammar.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.1">
+          </picture>
         </div>
       </article>
 
@@ -391,41 +397,53 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
           <p data-i18n="c.2.text">Різке чи сумбурне повідомлення стає ввічливим і твердим листом партнерові. Усі факти лишаються на місці.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-2-business.webp" data-en="images/en/case-2-business.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.2">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-2-business-dark.webp" data-en="images/en/case-2-business-dark.webp">
+            <img class="shot" src="images/ua/case-2-business.webp" data-en="images/en/case-2-business.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.2">
+          </picture>
         </div>
       </article>
 
       <article class="case" id="case-3">
         <div class="case-text">
-          <span class="tag"><span data-i18n="s.3">Переклад</span> ⌘3</span>
-          <h3 data-i18n="c.3.title">Пишіть рідною — відповідайте будь-якою</h3>
-          <p data-i18n="c.3.text">Мова оригіналу визначається сама: українська стає англійською, англійська — українською. Звучить природно, як у носія мови.</p>
+          <span class="tag"><span data-i18n="s.3">Переклад EN</span> ⌘3</span>
+          <h3 data-i18n="c.3.title">Пишіть українською — надсилайте англійською</h3>
+          <p data-i18n="c.3.text">Українська стає англійською, англійська — українською: напрямок обирається сам. Звучить природно, як у носія мови.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-3-translate.webp" data-en="images/en/case-3-translate.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.3">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-3-translate-en-dark.webp" data-en="images/en/case-3-translate-en-dark.webp">
+            <img class="shot" src="images/ua/case-3-translate-en.webp" data-en="images/en/case-3-translate-en.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.3">
+          </picture>
         </div>
       </article>
 
       <article class="case" id="case-4">
         <div class="case-text">
-          <span class="tag"><span data-i18n="s.4">Відповідь клієнту</span> ⌘4</span>
-          <h3 data-i18n="c.4.title">Відповіді клієнтам — за документами вашої компанії</h3>
-          <p data-i18n="c.4.text">Виділіть повідомлення клієнта в Telegram чи Viber — і отримайте відповідь лише з фактів вашої бази знань: ціни, графік, умови. Готова відповідь вставляється просто в поле чату.</p>
-          <p data-i18n="c.4.text2">Покладіть базу в спільну папку iCloud чи Synology Drive — і вся команда відповідатиме однаково, а правки колег одразу потраплять у відповіді.</p>
+          <span class="tag"><span data-i18n="s.4">Переклад UA</span> ⌘4</span>
+          <h3 data-i18n="c.4.title">Відповідь з-за кордону — українською</h3>
+          <p data-i18n="c.4.text">Німецька, польська, англійська чи будь-яка інша мова стає українською — мову оригіналу не треба вказувати. Переклади йдуть через DeepL або будь-яку модель на ваш вибір.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-4-knowledge.webp" data-en="images/en/case-4-knowledge.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.4">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-4-translate-ua-dark.webp" data-en="images/en/case-4-translate-ua-dark.webp">
+            <img class="shot" src="images/ua/case-4-translate-ua.webp" data-en="images/en/case-4-translate-ua.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.4">
+          </picture>
         </div>
       </article>
 
       <article class="case" id="case-5">
         <div class="case-text">
-          <span class="tag"><span data-i18n="s.5">Структурувати</span> ⌘5</span>
-          <h3 data-i18n="c.5.title">Надиктували думки — отримали структуру</h3>
-          <p data-i18n="c.5.text">З нотатки, голосового чи конспекту дзвінка робить чіткий список або зв'язний текст — без повторів і зайвих слів.</p>
+          <span class="tag"><span data-i18n="s.5">Відповідь клієнту</span> ⌘5</span>
+          <h3 data-i18n="c.5.title">Відповіді клієнтам — за документами вашої компанії</h3>
+          <p data-i18n="c.5.text">Виділіть повідомлення клієнта в Telegram чи Viber — і отримайте відповідь лише з фактів вашої бази знань: ціни, графік, умови. Готова відповідь вставляється просто в поле чату.</p>
+          <p data-i18n="c.5.text2">Покладіть базу в спільну папку iCloud чи Synology Drive — і вся команда відповідатиме однаково, а правки колег одразу потраплять у відповіді.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-5-structure.webp" data-en="images/en/case-5-structure.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.5">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-5-reply-dark.webp" data-en="images/en/case-5-reply-dark.webp">
+            <img class="shot" src="images/ua/case-5-reply.webp" data-en="images/en/case-5-reply.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.5">
+          </picture>
         </div>
       </article>
 
@@ -436,7 +454,10 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
           <p data-i18n="c.6.text">Буденне повідомлення стає промовою дотепного дядька з Полтавщини: приказки, порівняння, перебільшення — а факти на місці. Стиль може бути будь-яким, навіть смішним.</p>
         </div>
         <div class="case-panel">
-          <img class="shot" src="images/ua/case-7-kolorit.webp" data-en="images/en/case-7-shakespeare.webp" width="780" height="403" loading="lazy" alt="" data-i18n-alt="alt.6">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="images/ua/case-6-kolorit-dark.webp" data-en="images/en/case-6-shakespeare-dark.webp">
+            <img class="shot" src="images/ua/case-6-kolorit.webp" data-en="images/en/case-6-shakespeare.webp" width="780" height="400" loading="lazy" alt="" data-i18n-alt="alt.6">
+          </picture>
         </div>
       </article>
     </div>
@@ -763,18 +784,18 @@ const EN = {
   "how.3.text": "The result replaces the selected text — right where you were typing.",
   "cases.title": "One app, many jobs",
   "cases.lead": "A style is a ready-made instruction for the model. Here are six examples — and you can create your own in a minute.",
-  "s.1": "Fix mistakes", "s.2": "Business tone", "s.3": "Translate", "s.4": "Reply to customer", "s.5": "Structure", "s.6": "Shakespeare",
+  "s.1": "Grammar", "s.2": "Business style", "s.3": "Translate EN", "s.4": "Translate UA", "s.5": "Reply to customer", "s.6": "Shakespeare",
   "c.1.title": "Type however you like — send it without mistakes",
   "c.1.text": "Fixes typos, punctuation and capitalisation while keeping your words and tone. Nothing gets rewritten for no reason.",
   "c.2.title": "Emotions in, business message out",
   "c.2.text": "A sharp or rambling message becomes a polite, firm note to a partner. Every fact stays in place.",
-  "c.3.title": "Write in yours — reply in theirs",
-  "c.3.text": "The source language is detected automatically: English turns into German, any other language into English. It reads naturally, like a native speaker wrote it.",
-  "c.4.title": "Answers from your own company documents",
-  "c.4.text": "Select a customer's message in WhatsApp or Telegram and get a reply built only from the facts in your knowledge base: prices, hours, terms. The reply is pasted straight into the chat box.",
-  "c.4.text2": "Keep the knowledge base in a shared iCloud or Synology Drive folder, and the whole team answers the same way — colleagues' edits show up in replies right away.",
-  "c.5.title": "Messy thoughts in, clear structure out",
-  "c.5.text": "Turns a note, a voice memo or call notes into a clear list or coherent text — without repetition or filler.",
+  "c.3.title": "Messages from abroad — in plain English",
+  "c.3.text": "Any language becomes English, and English becomes Ukrainian — the direction is picked automatically. It reads naturally, like a native speaker wrote it.",
+  "c.4.title": "Write to Ukrainian customers in Ukrainian",
+  "c.4.text": "Any language becomes Ukrainian — no need to say what the original is. Translations run through DeepL or any model you choose.",
+  "c.5.title": "Answers from your own company documents",
+  "c.5.text": "Select a customer's message in WhatsApp or Telegram and get a reply built only from the facts in your knowledge base: prices, hours, terms. The reply is pasted straight into the chat box.",
+  "c.5.text2": "Keep the knowledge base in a shared iCloud or Synology Drive folder, and the whole team answers the same way — colleagues' edits show up in replies right away.",
   "c.6.title": "And just for fun",
   "c.6.text": "An everyday note becomes a scene from a play — thee, thou and doth, with every fact still in place. A style can be anything, even funny.",
   "f.title": "Everything you need to work with text",
@@ -826,21 +847,21 @@ const EN = {
   "q.6.q": "How do updates work?",
   "q.6.a": "The app checks for updates itself and installs them in one click — your settings, keys and permissions are kept.",
   "ft.releases": "All versions",
-  "alt.hero": "Harno window: an emotional message rewritten in a business tone",
-  "alt.1": "Fix mistakes: a message with typos and its corrected version",
-  "alt.2": "Business tone: an angry message to a supplier and its polite version",
-  "alt.3": "Translate: a message in English and its German translation",
-  "alt.4": "Reply to customer: a question to a gym and a reply built from its knowledge base",
-  "alt.5": "Structure: a rambling note turned into a to-do list",
+  "alt.hero": "Harno window: an emotional message rewritten in a business style",
+  "alt.1": "Grammar: a message with typos and its corrected version",
+  "alt.2": "Business style: an angry message to a supplier and its polite version",
+  "alt.3": "Translate EN: a supplier's reply in German and its English translation",
+  "alt.4": "Translate UA: a note to customers in English and its Ukrainian translation",
+  "alt.5": "Reply to customer: a question to a gym and a reply built from its knowledge base",
   "alt.6": "Shakespeare: a note about a parked car rewritten in Shakespearean English",
 };
 const UA_ALT = {
   "alt.hero": "Вікно Harno: емоційне повідомлення, переписане діловим стилем",
-  "alt.1": "Виправити: повідомлення з одруківками та виправлений варіант",
+  "alt.1": "Граматика: повідомлення з одруківками та виправлений варіант",
   "alt.2": "Діловий стиль: різке повідомлення постачальнику та ввічливий варіант",
-  "alt.3": "Переклад: повідомлення українською та переклад англійською",
-  "alt.4": "Відповідь клієнту: запитання до фітнес-клубу та відповідь за його базою знань",
-  "alt.5": "Структурувати: сумбурна нотатка, перетворена на список справ",
+  "alt.3": "Переклад EN: лист постачальнику українською та переклад англійською",
+  "alt.4": "Переклад UA: відповідь постачальника німецькою та переклад українською",
+  "alt.5": "Відповідь клієнту: запитання до фітнес-клубу та відповідь за його базою знань",
   "alt.6": "Колорит: повідомлення про машину біля під'їзду, переписане з українським колоритом",
 };
 const META = {
@@ -853,7 +874,9 @@ const META = {
 
 const UA = {};
 document.querySelectorAll("[data-i18n]").forEach(el => { UA[el.dataset.i18n] = el.innerHTML; });
-document.querySelectorAll("img[data-en]").forEach(img => { img.dataset.ua = img.getAttribute("src"); });
+// У <source> тёмной темы адрес в srcset, у <img> — в src.
+const srcAttr = el => el.tagName === "SOURCE" ? "srcset" : "src";
+document.querySelectorAll("[data-en]").forEach(el => { el.dataset.ua = el.getAttribute(srcAttr(el)); });
 
 let release = null;
 
@@ -864,7 +887,7 @@ function setLang(lang) {
     const value = dict[el.dataset.i18n];
     if (value !== undefined) el.innerHTML = value;
   });
-  document.querySelectorAll("img[data-en]").forEach(img => { img.src = lang === "en" ? img.dataset.en : img.dataset.ua; });
+  document.querySelectorAll("[data-en]").forEach(el => { el.setAttribute(srcAttr(el), lang === "en" ? el.dataset.en : el.dataset.ua); });
   document.querySelectorAll("[data-i18n-alt]").forEach(img => {
     img.alt = (lang === "en" ? EN : UA_ALT)[img.dataset.i18nAlt] || "";
   });
