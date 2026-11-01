@@ -210,6 +210,17 @@ header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 .install h3 { font-size: 18px; margin-bottom: 6px; }
 .install p { margin: 0; color: var(--muted); font-size: 15.5px; }
 .install-cta { text-align: center; margin-top: 36px; }
+.cli { max-width: 780px; margin: 40px auto 0; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
+.cli h3 { font-size: 18px; margin-bottom: 6px; }
+.cli p { color: var(--muted); font-size: 15.5px; margin: 0 0 14px; }
+.cli .cli-note { margin: 12px 0 0; font-size: 14px; }
+.cli-command { display: flex; gap: 10px; align-items: center; background: var(--surface-2); border-radius: 12px; padding: 8px 8px 8px 14px; }
+.cli-cmd { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.copy {
+  flex: none; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+}
+.copy:hover { border-color: var(--brand-slate); }
 
 /* Что нового */
 #changes { padding-bottom: 48px; }
@@ -505,6 +516,15 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
       <div class="install-cta">
         <a class="btn download" href="#"><span data-i18n="hero.download">Завантажити для macOS</span></a>
       </div>
+      <div class="cli">
+        <h3 data-i18n="cli.title">Для досвідчених: встановлення з Термінала</h3>
+        <p data-i18n="cli.text">Одна команда завантажить останню версію, поставить її в «Програми» і запустить — без попередження macOS про неперевіреного розробника. Цією ж командою можна оновитися.</p>
+        <div class="cli-command">
+          <code class="cli-cmd">curl -fsSL https://harno.tehnokrat.ua/install.sh | sh</code>
+          <button type="button" class="copy" data-i18n="cli.copy">Копіювати</button>
+        </div>
+        <p class="cli-note" data-i18n="cli.note">Скрипт можна переглянути: <a href="install.sh">install.sh</a>. Універсальний доступ macOS дозволяє вмикати лише вручну — Harno сам попросить його під час першого запуску.</p>
+      </div>
     </div>
   </section>
 
@@ -586,6 +606,14 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (53)", date: "2026-11-01", items: [
+    { kind: "improved",
+      ua: "Якщо система російською, а мову не вибрано вручну, інтерфейс тепер українською. Змінити можна в Налаштування → Загальні.",
+      en: "On a Russian system, the interface now starts in Ukrainian unless you've chosen a language. You can change it in Settings → General." },
+    { kind: "new",
+      ua: "Встановлення й оновлення з Термінала однією командою — див. розділ «Встановлення».",
+      en: "Install and update from Terminal with one command — see the Set up section." },
+  ] },
   { v: "0.5.0 (50)", date: "2026-11-01", items: [
     { kind: "new",
       ua: "Новий набір стандартних стилів: Граматика, Діловий стиль, Переклад EN, Переклад UA, Відповідь клієнту й Колорит — дотепний переказ українською, як від дядька з Полтавщини.",
@@ -760,6 +788,10 @@ const EN = {
   "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
   "i.4.title": "Grant access and connect a model",
   "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio.",
+  "cli.title": "For advanced users: install from Terminal",
+  "cli.text": "One command downloads the latest version, puts it in Applications and opens it — without the macOS warning about an unverified developer. Run it again to update.",
+  "cli.copy": "Copy",
+  "cli.note": "You can read the script first: <a href='install.sh'>install.sh</a>. macOS only lets you turn on Accessibility by hand — Harno asks for it on first launch.",
   "ch.title": "What's new",
   "ch.lead": "We ship updates often, and the app offers to install them itself. Here's what changed recently.",
   "fb.title": "Found a bug or have an idea?",
@@ -878,6 +910,14 @@ function showVersion(lang) {
 }
 
 document.querySelectorAll("a.download").forEach(a => { a.href = DOWNLOAD; });
+// Копирование команды установки; надпись на кнопке на две секунды сменяется подтверждением.
+document.querySelector(".cli .copy").addEventListener("click", async e => {
+  const button = e.currentTarget;
+  try { await navigator.clipboard.writeText(document.querySelector(".cli-cmd").textContent.trim()); } catch (err) { return; }
+  const en = document.documentElement.lang === "en";
+  button.textContent = en ? "Copied" : "Скопійовано";
+  setTimeout(() => { button.textContent = en ? EN["cli.copy"] : UA["cli.copy"]; }, 2000);
+});
 if (FEEDBACK) {
   document.getElementById("feedback").hidden = false;
 } else {
