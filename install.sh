@@ -62,6 +62,6 @@ if [ -z "${HARNO_NO_LAUNCH:-}" ]; then
     open "$DIR/Harno.app"
     say "Harno запущено — значок у рядку меню. Під час першого запуску дозвольте «Універсальний доступ»," \
         "Harno is running — look for its icon in the menu bar. On first launch, allow Accessibility"
-    say "а потім додайте ключ API в «Налаштування» → «Моделі» або запустіть LM Studio." \
-        "and then add an API key in Settings → Models or start LM Studio."
+    say "а потім додайте ключ API в «Налаштування» → «Моделі» або запустіть LM Studio чи Ollama." \
+        "and then add an API key in Settings → Models or start LM Studio or Ollama."
 fi

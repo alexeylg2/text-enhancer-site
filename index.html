@@ -449,7 +449,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         <div class="feature">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/><path d="M8 22h8"/></svg>
           <h3 data-i18n="f.1.title">Хмарні й локальні моделі</h3>
-          <p data-i18n="f.1.text">Claude, OpenAI, Gemini, DeepSeek і DeepL — або LM Studio просто на вашому Mac.</p>
+          <p data-i18n="f.1.text">Claude, OpenAI, Gemini, DeepSeek і DeepL — або LM Studio чи Ollama просто на вашому Mac.</p>
         </div>
         <div class="feature">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
@@ -486,7 +486,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
         <div>
           <h2 data-i18n="p.title">Ваш текст — тільки ваш</h2>
-          <p data-i18n="p.text">З LM Studio текст узагалі не залишає ваш Mac. Хмарним моделям він передається напряму, без проміжних серверів, а ключі API зберігаються у Зв'язці ключів macOS. Крім перевірки оновлень на GitHub, застосунок нічого не надсилає й нічого про вас не збирає.</p>
+          <p data-i18n="p.text">З LM Studio чи Ollama текст узагалі не залишає ваш Mac. Хмарним моделям він передається напряму, без проміжних серверів, а ключі API зберігаються у Зв'язці ключів macOS. Крім перевірки оновлень на GitHub, застосунок нічого не надсилає й нічого про вас не збирає.</p>
         </div>
       </div>
     </div>
@@ -510,7 +510,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         </li>
         <li>
           <h3 data-i18n="i.4.title">Надайте доступ і підключіть модель</h3>
-          <p data-i18n="i.4.text">Дозвольте «Універсальний доступ» — щоб застосунок міг брати виділений текст. Потім додайте ключ API або запустіть LM Studio.</p>
+          <p data-i18n="i.4.text">Дозвольте «Універсальний доступ» — щоб застосунок міг брати виділений текст. Потім додайте ключ API або запустіть LM Studio чи Ollama.</p>
         </li>
       </ol>
       <div class="install-cta">
@@ -559,7 +559,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         </details>
         <details>
           <summary data-i18n="q.1.q">Це справді безкоштовно?</summary>
-          <p data-i18n="q.1.a">Так, застосунок безкоштовний. Хмарні моделі ви оплачуєте напряму в сервісі за своїм ключем API — зазвичай це частки цента за запит. LM Studio і локальні моделі безкоштовні.</p>
+          <p data-i18n="q.1.a">Так, застосунок безкоштовний. Хмарні моделі ви оплачуєте напряму в сервісі за своїм ключем API — зазвичай це частки цента за запит. LM Studio, Ollama й локальні моделі безкоштовні.</p>
         </details>
         <details>
           <summary data-i18n="q.2.q">Який потрібен Mac?</summary>
@@ -567,7 +567,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         </details>
         <details>
           <summary data-i18n="q.3.q">Куди йде мій текст?</summary>
-          <p data-i18n="q.3.a">Тільки до моделі, яку ви обрали для стилю. З LM Studio — нікуди: обробка відбувається на вашому Mac.</p>
+          <p data-i18n="q.3.a">Тільки до моделі, яку ви обрали для стилю. З LM Studio чи Ollama — нікуди: обробка відбувається на вашому Mac.</p>
         </details>
         <details>
           <summary data-i18n="q.4.q">Де взяти ключ API?</summary>
@@ -606,6 +606,11 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (55)", date: "2026-11-01", items: [
+    { kind: "new",
+      ua: "Підтримка Ollama: встановіть Ollama з ollama.com, завантажте модель (наприклад, ollama pull qwen3.5:9b) і виберіть Ollama в меню моделі внизу вікна. Текст не залишає ваш Mac, а Ollama працює й на Mac з Intel.",
+      en: "Ollama support: install Ollama from ollama.com, download a model (for example, ollama pull qwen3.5:9b) and pick Ollama in the model menu at the bottom of the window. Your text stays on your Mac, and Ollama runs on Intel Macs too." },
+  ] },
   { v: "0.5.0 (53)", date: "2026-11-01", items: [
     { kind: "improved",
       ua: "Якщо система російською, а мову не вибрано вручну, інтерфейс тепер українською. Змінити можна в Налаштування → Загальні.",
@@ -766,7 +771,7 @@ const EN = {
   "c.6.text": "An everyday note becomes a scene from a play — thee, thou and doth, with every fact still in place. A style can be anything, even funny.",
   "f.title": "Everything you need to work with text",
   "f.1.title": "Cloud and local models",
-  "f.1.text": "Claude, OpenAI, Gemini, DeepSeek and DeepL — or LM Studio right on your Mac.",
+  "f.1.text": "Claude, OpenAI, Gemini, DeepSeek and DeepL — or LM Studio or Ollama right on your Mac.",
   "f.2.title": "A model for every style",
   "f.2.text": "Translations through DeepL, customer replies through Claude, drafts locally. Each style remembers its model.",
   "f.3.title": "Your own styles",
@@ -778,7 +783,7 @@ const EN = {
   "f.6.title": "History",
   "f.6.text": "Your last 50 results are always at hand in the app menu.",
   "p.title": "Your text stays yours",
-  "p.text": "With LM Studio, your text never leaves your Mac. Cloud models receive it directly, with no servers in between, and API keys are stored in the macOS Keychain. Apart from checking GitHub for updates, the app sends nothing and collects nothing about you.",
+  "p.text": "With LM Studio or Ollama, your text never leaves your Mac. Cloud models receive it directly, with no servers in between, and API keys are stored in the macOS Keychain. Apart from checking GitHub for updates, the app sends nothing and collects nothing about you.",
   "i.title": "Set up in two minutes",
   "i.1.title": "Download",
   "i.1.text": "Click Download and unzip Harno.zip.",
@@ -787,7 +792,7 @@ const EN = {
   "i.3.title": "Allow it to open",
   "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
   "i.4.title": "Grant access and connect a model",
-  "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio.",
+  "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio or Ollama.",
   "cli.title": "For advanced users: install from Terminal",
   "cli.text": "One command downloads the latest version, puts it in Applications and opens it — without the macOS warning about an unverified developer. Run it again to update.",
   "cli.copy": "Copy",
@@ -801,11 +806,11 @@ const EN = {
   "q.0.q": "What does “beta” mean?",
   "q.0.a": "The app is already used every day by our team, but we're still polishing it and ship updates often. Small rough edges are possible — if something goes wrong, write to us.",
   "q.1.q": "Is it really free?",
-  "q.1.a": "Yes, the app is free. You pay cloud providers directly through your own API key — usually a fraction of a cent per request. LM Studio and local models are free.",
+  "q.1.a": "Yes, the app is free. You pay cloud providers directly through your own API key — usually a fraction of a cent per request. LM Studio, Ollama and local models are free.",
   "q.2.q": "Which Mac do I need?",
   "q.2.a": "macOS 14 Sonoma or later, on Apple Silicon or Intel.",
   "q.3.q": "Where does my text go?",
-  "q.3.a": "Only to the model you chose for the style. With LM Studio, nowhere: everything runs on your Mac.",
+  "q.3.a": "Only to the model you chose for the style. With LM Studio or Ollama, nowhere: everything runs on your Mac.",
   "q.4.q": "Where do I get an API key?",
   "q.4.a": "In the app's settings, every provider has a Get key link. The key is stored in the macOS Keychain.",
   "q.5.q": "Why does macOS warn me on first launch?",
