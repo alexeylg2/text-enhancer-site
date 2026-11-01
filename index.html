@@ -606,6 +606,14 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (57)", date: "2026-11-01", items: [
+    { kind: "fixed",
+      ua: "<kbd>⌘1</kbd>…<kbd>⌘9</kbd> могли запускати застарілу копію стилю — наприклад, «Відповідь клієнту» писала, що документів немає, хоча їх уже додали, а кнопка працювала.",
+      en: "<kbd>⌘1</kbd>…<kbd>⌘9</kbd> could run an outdated copy of a style — for example, Reply to customer said there were no documents after you'd added them, while the button worked." },
+    { kind: "improved",
+      ua: "Відповіді клієнтам більше не починаються з пояснення, якою мовою написано відповідь.",
+      en: "Customer replies no longer start with a note about which language they're in." },
+  ] },
   { v: "0.5.0 (55)", date: "2026-11-01", items: [
     { kind: "new",
       ua: "Підтримка Ollama: встановіть Ollama з ollama.com, завантажте модель (наприклад, ollama pull qwen3.5:9b) і виберіть Ollama в меню моделі внизу вікна. Текст не залишає ваш Mac, а Ollama працює й на Mac з Intel.",
