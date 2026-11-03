@@ -659,6 +659,17 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (68)", date: "2026-11-03", items: [
+    { kind: "new",
+      ua: "Знайомство при першому запуску: три кроки — дати «Універсальний доступ», підключити модель (LM Studio й Ollama Harno знаходить сам, ключі DeepL і хмарних моделей — у налаштуваннях) і спробувати стиль на прикладі тексту.",
+      en: "A short intro on first launch, in three steps: grant Accessibility access, connect a model (Harno finds LM Studio and Ollama on its own; DeepL and cloud keys go in Settings) and try a style on a sample text." },
+    { kind: "new",
+      ua: "Пункт «Як почати…» в меню значка знову відкриває знайомство.",
+      en: "\"Getting started…\" in the menu bar menu opens the intro again." },
+    { kind: "improved",
+      ua: "Якщо LM Studio не встановлено, моделлю за замовчуванням стане Ollama або хмарна модель, ключ якої ви додали.",
+      en: "If LM Studio isn't installed, Harno makes Ollama or a cloud model you've added the default." },
+  ] },
   { v: "0.5.0 (66)", date: "2026-11-03", items: [
     { kind: "new",
       ua: "Harno нотаризований Apple: завантажений застосунок відкривається без попередження про неперевіреного розробника.",
