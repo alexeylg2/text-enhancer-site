@@ -551,11 +551,11 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
       <ol class="install">
         <li>
           <h3 data-i18n="i.1.title">Завантажте</h3>
-          <p data-i18n="i.1.text">Натисніть «Завантажити» і розпакуйте архів Harno.zip.</p>
+          <p data-i18n="i.1.text">Натисніть «Завантажити» і відкрийте Harno.dmg.</p>
         </li>
         <li>
           <h3 data-i18n="i.2.title">Перенесіть у «Програми»</h3>
-          <p data-i18n="i.2.text">Перетягніть Harno у папку «Програми» і запустіть.</p>
+          <p data-i18n="i.2.text">У вікні, що відкриється, перетягніть Harno на папку «Програми» і запустіть його звідти.</p>
         </li>
         <li>
           <h3 data-i18n="i.3.title">Відкрийте</h3>
@@ -651,7 +651,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
 </footer>
 
 <script>
-const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/latest/download/Harno.zip";
+const DOWNLOAD = "https://github.com/alexeylg2/text-enhancer-releases/releases/latest/download/Harno.dmg";
 const LATEST = "https://api.github.com/repos/alexeylg2/text-enhancer-releases/releases/latest";
 // Форма отзывов и сообщений об ошибках (Tally). Пустая строка скрывает блок отзывов.
 const FEEDBACK = "https://tally.so/r/M11B7E";
@@ -659,6 +659,14 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (70)", date: "2026-11-03", items: [
+    { kind: "new",
+      ua: "Harno завантажується образом диска Harno.dmg: просто перетягніть Harno на папку «Програми» в його вікні.",
+      en: "Harno now downloads as a disk image, Harno.dmg: just drag Harno onto the Applications folder in its window." },
+    { kind: "new",
+      ua: "Якщо Harno відкрито не з «Програм» — наприклад, просто із «Завантажень», — він запропонує перенестися туди сам. З «Програм» він оновлюється сам, а «Універсальний доступ» не губиться.",
+      en: "If Harno is opened from anywhere other than Applications — say, straight from Downloads — it offers to move itself there. From Applications it updates itself, and Accessibility access isn't lost." },
+  ] },
   { v: "0.5.0 (68)", date: "2026-11-03", items: [
     { kind: "new",
       ua: "Знайомство при першому запуску: три кроки — дати «Універсальний доступ», підключити модель (LM Studio й Ollama Harno знаходить сам, ключі DeepL і хмарних моделей — у налаштуваннях) і спробувати стиль на прикладі тексту.",
@@ -879,9 +887,9 @@ const EN = {
   "p.text": "With LM Studio or Ollama, your text never leaves your Mac. Cloud models receive it directly, with no servers in between, and API keys are stored in the macOS Keychain. Once a day the app checks for updates — we only count how many checks happen each day, with no IP addresses or identifiers. Other than that, it sends nothing and collects nothing about you.",
   "i.title": "Set up in two minutes",
   "i.1.title": "Download",
-  "i.1.text": "Click Download and unzip Harno.zip.",
+  "i.1.text": "Click Download and open Harno.dmg.",
   "i.2.title": "Move to Applications",
-  "i.2.text": "Drag Harno into the Applications folder and open it.",
+  "i.2.text": "In the window that opens, drag Harno onto the Applications folder and open it from there.",
   "i.3.title": "Open it",
   "i.3.text": "Harno is notarized by Apple, so macOS only asks whether to open an app downloaded from the internet — click Open.",
   "i.4.title": "Grant access and connect a model",
