@@ -558,8 +558,8 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
           <p data-i18n="i.2.text">Перетягніть Harno у папку «Програми» і запустіть.</p>
         </li>
         <li>
-          <h3 data-i18n="i.3.title">Дозвольте запуск</h3>
-          <p data-i18n="i.3.text">Якщо macOS попередить, що не може перевірити застосунок, відкрийте Системні параметри → Приватність і безпека → «Усе одно відкрити».</p>
+          <h3 data-i18n="i.3.title">Відкрийте</h3>
+          <p data-i18n="i.3.text">Harno нотаризований Apple, тож macOS лише запитає, чи відкрити застосунок, завантажений з інтернету, — натисніть «Відкрити».</p>
         </li>
         <li>
           <h3 data-i18n="i.4.title">Надайте доступ і підключіть модель</h3>
@@ -571,7 +571,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
       </div>
       <div class="cli">
         <h3 data-i18n="cli.title">Для досвідчених: встановлення з Термінала</h3>
-        <p data-i18n="cli.text">Одна команда завантажить останню версію, поставить її в «Програми» і запустить — без попередження macOS про неперевіреного розробника. Цією ж командою можна оновитися.</p>
+        <p data-i18n="cli.text">Одна команда завантажить останню версію, поставить її в «Програми» і запустить. Цією ж командою можна оновитися.</p>
         <div class="cli-command">
           <code class="cli-cmd">curl -fsSL https://harno.tehnokrat.ua/install.sh | sh</code>
           <button type="button" class="copy" data-i18n="cli.copy">Копіювати</button>
@@ -627,8 +627,8 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
           <p data-i18n="q.4.a">У налаштуваннях застосунку біля кожного сервісу є посилання «Отримати ключ». Ключ зберігається у Зв'язці ключів macOS.</p>
         </details>
         <details>
-          <summary data-i18n="q.5.q">Чому macOS попереджає під час першого запуску?</summary>
-          <p data-i18n="q.5.a">Застосунок підписаний, але ще не пройшов нотаризацію Apple. Дозвольте запуск один раз у «Приватність і безпека» — далі він відкривається як звичайно.</p>
+          <summary data-i18n="q.5.q">Оновлення пише «підписано іншим сертифікатом» — що робити?</summary>
+          <p data-i18n="q.5.a">З версії 0.5.0 (66) Harno нотаризований Apple і підписаний новим сертифікатом, тому версії 0.5.0 (61) і раніші не можуть оновитися самі. Завантажте Harno з цієї сторінки й замініть ним старий у «Програмах» — стилі й налаштування збережуться. macOS ще раз попросить «Універсальний доступ» і доступ до ключів у Зв'язці ключів.</p>
         </details>
         <details>
           <summary data-i18n="q.6.q">Як оновлювати?</summary>
@@ -659,6 +659,17 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (66)", date: "2026-11-03", items: [
+    { kind: "new",
+      ua: "Harno нотаризований Apple: завантажений застосунок відкривається без попередження про неперевіреного розробника.",
+      en: "Harno is notarized by Apple: a downloaded copy opens without the warning about an unverified developer." },
+    { kind: "improved",
+      ua: "Після оновлення macOS ще раз попросить «Універсальний доступ» і доступ до ключів у Зв'язці ключів («Завжди дозволяти»). Якщо Harno уже ввімкнений в «Універсальному доступі», але просить знову, видаліть його кнопкою «−» і додайте ще раз.",
+      en: "After the update macOS asks once more for Accessibility access and for access to your keys in the Keychain (choose Always Allow). If Harno is already on in Accessibility but still asks, remove it with − and add it again." },
+    { kind: "fixed",
+      ua: "Версії 0.5.0 (61) і раніші не оновляться кнопкою («підписано іншим сертифікатом»): один раз завантажте Harno з цієї сторінки й замініть ним старий у «Програмах» — стилі й налаштування збережуться.",
+      en: "Versions 0.5.0 (61) and earlier can't update with the button (\"signed with a different certificate\"): download Harno from this page once and replace the old copy in Applications — your styles and settings stay." },
+  ] },
   { v: "0.5.0 (64)", date: "2026-11-02", items: [
     { kind: "improved",
       ua: "Підготовка до збірок, перевірених Apple (нотаризація): ця версія зможе встановити наступне оновлення, підписане новим сертифікатом. Більше нічого не змінюється.",
@@ -860,12 +871,12 @@ const EN = {
   "i.1.text": "Click Download and unzip Harno.zip.",
   "i.2.title": "Move to Applications",
   "i.2.text": "Drag Harno into the Applications folder and open it.",
-  "i.3.title": "Allow it to open",
-  "i.3.text": "If macOS says it can't verify the app, go to System Settings → Privacy & Security → Open Anyway.",
+  "i.3.title": "Open it",
+  "i.3.text": "Harno is notarized by Apple, so macOS only asks whether to open an app downloaded from the internet — click Open.",
   "i.4.title": "Grant access and connect a model",
   "i.4.text": "Allow Accessibility so the app can pick up the selected text. Then add an API key or start LM Studio or Ollama.",
   "cli.title": "For advanced users: install from Terminal",
-  "cli.text": "One command downloads the latest version, puts it in Applications and opens it — without the macOS warning about an unverified developer. Run it again to update.",
+  "cli.text": "One command downloads the latest version, puts it in Applications and opens it. Run it again to update.",
   "cli.copy": "Copy",
   "cli.note": "You can read the script first: <a href='install.sh'>install.sh</a>. macOS only lets you turn on Accessibility by hand — Harno asks for it on first launch.",
   "ch.title": "What's new",
@@ -884,8 +895,8 @@ const EN = {
   "q.3.a": "Only to the model you chose for the style. With LM Studio or Ollama, nowhere: everything runs on your Mac.",
   "q.4.q": "Where do I get an API key?",
   "q.4.a": "In the app's settings, every provider has a Get key link. The key is stored in the macOS Keychain.",
-  "q.5.q": "Why does macOS warn me on first launch?",
-  "q.5.a": "The app is signed but not yet notarised by Apple. Allow it once in Privacy & Security, and from then on it opens normally.",
+  "q.5.q": "The update says \"signed with a different certificate\" — what now?",
+  "q.5.a": "Since 0.5.0 (66) Harno is notarized by Apple and signed with a new certificate, so 0.5.0 (61) and earlier can't update themselves. Download Harno from this page and replace the old copy in Applications — your styles and settings stay. macOS asks once more for Accessibility access and for access to your keys in the Keychain.",
   "q.6.q": "How do updates work?",
   "q.6.a": "The app checks for updates itself and installs them in one click — your settings, keys and permissions are kept.",
   "ft.releases": "All versions",
