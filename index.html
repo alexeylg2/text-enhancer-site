@@ -387,7 +387,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
         </div>
         <div class="step">
           <div class="num">3</div>
-          <h3 data-i18n="how.3.title">Натисніть <kbd>↩</kbd></h3>
+          <h3 data-i18n="how.3.title">Натисніть <kbd>⌘↩</kbd></h3>
           <p data-i18n="how.3.text">Результат стане на місце виділеного тексту — там, де ви писали.</p>
         </div>
       </div>
@@ -659,6 +659,17 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (72)", date: "2026-11-06", items: [
+    { kind: "new",
+      ua: "Переклад оновлюється під час введення: вибравши стиль-переклад, змінюйте текст ліворуч, і за секунду після останнього натискання праворуч буде новий переклад. Вимкнути можна в «Налаштування» → «Моделі» → «Генерація».",
+      en: "Translations update as you type: with a translation style selected, edit the text on the left, and a second after your last keystroke the new translation appears on the right. You can turn it off in Settings → Models → Generation." },
+    { kind: "improved",
+      ua: "Enter тепер переносить рядок, а ⌘Enter замінює текст або вставляє відповідь. Так під час набору нічого не вставиться випадково. Якщо ви звикли натискати Enter після стилю, тепер це ⌘Enter.",
+      en: "Enter now adds a new line, and ⌘Enter replaces the text or pastes the reply, so nothing gets pasted by accident while you type. If you're used to pressing Enter after a style, it's now ⌘Enter." },
+    { kind: "fixed",
+      ua: "Текст кількома мовами тепер перекладається повністю. Раніше рядки іншою мовою могли лишатися без перекладу — наприклад, російські рядки в українському тексті.",
+      en: "Text in several languages is now translated in full. Before, lines in a second language could stay untranslated, such as Russian lines in Ukrainian text." },
+  ] },
   { v: "0.5.0 (70)", date: "2026-11-03", items: [
     { kind: "new",
       ua: "Harno завантажується образом диска Harno.dmg: просто перетягніть Harno на папку «Програми» в його вікні.",
@@ -852,7 +863,7 @@ const EN = {
   "how.1.text": "In mail, a messenger, a browser or a document — in any app.",
   "how.2.title": "Press <kbd>⌘T</kbd>",
   "how.2.text": "A window opens with your text — pick a style with <span class='nowrap'><kbd>⌘1</kbd>…<kbd>⌘9</kbd></span>.",
-  "how.3.title": "Press <kbd>↩</kbd>",
+  "how.3.title": "Press <kbd>⌘↩</kbd>",
   "how.3.text": "The result replaces the selected text — right where you were typing.",
   "cases.title": "One app, many jobs",
   "cases.lead": "A style is a ready-made instruction for the model. Here are six examples — and you can create your own in a minute.",
