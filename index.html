@@ -659,6 +659,20 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (76)", date: "2026-11-07", items: [
+    { kind: "new",
+      ua: "Кнопка «Очистити» над вихідним текстом і клавіші <kbd>⌘K</kbd>: поле спорожніє, і можна одразу вводити новий текст.",
+      en: "A Clear button above the original text, with <kbd>⌘K</kbd>: the field empties and you can type new text right away." },
+    { kind: "improved",
+      ua: "Кнопки «Очистити» та «У вихідний текст» виділені кольором, коли їх можна натиснути.",
+      en: "The Clear and To source buttons are colored when they can be pressed." },
+    { kind: "improved",
+      ua: "Прибрано налаштування «Вимикати міркування моделі»: Harno завжди просить модель відповідати без них.",
+      en: "The setting to turn off model thinking is gone: Harno always asks models to answer without it." },
+    { kind: "improved",
+      ua: "Розділ «Генерація» у налаштуваннях моделей тепер називається «Переклад».",
+      en: "The Generation section in the model settings is now called Translation." },
+  ] },
   { v: "0.5.0 (74)", date: "2026-11-06", items: [
     { kind: "new",
       ua: "Harno сам повідомить про нову версію: сповіщення macOS із кнопкою «Оновити», одне на версію й не частіше ніж раз на тиждень. Дозвіл macOS запитає перед першим сповіщенням. Вимкнути можна в «Налаштування» → «Основні».",
@@ -669,8 +683,8 @@ const CHANGES = [
   ] },
   { v: "0.5.0 (72)", date: "2026-11-06", items: [
     { kind: "new",
-      ua: "Переклад оновлюється під час введення: вибравши стиль-переклад, змінюйте текст ліворуч, і за секунду після останнього натискання праворуч буде новий переклад. Вимкнути можна в «Налаштування» → «Моделі» → «Генерація».",
-      en: "Translations update as you type: with a translation style selected, edit the text on the left, and a second after your last keystroke the new translation appears on the right. You can turn it off in Settings → Models → Generation." },
+      ua: "Переклад оновлюється під час введення: вибравши стиль-переклад, змінюйте текст ліворуч, і за секунду після останнього натискання праворуч буде новий переклад. Вимкнути можна в «Налаштування» → «Моделі» → «Переклад».",
+      en: "Translations update as you type: with a translation style selected, edit the text on the left, and a second after your last keystroke the new translation appears on the right. You can turn it off in Settings → Models → Translation." },
     { kind: "improved",
       ua: "Enter тепер переносить рядок, а ⌘Enter замінює текст або вставляє відповідь. Так під час набору нічого не вставиться випадково. Якщо ви звикли натискати Enter після стилю, тепер це ⌘Enter.",
       en: "Enter now adds a new line, and ⌘Enter replaces the text or pastes the reply, so nothing gets pasted by accident while you type. If you're used to pressing Enter after a style, it's now ⌘Enter." },
