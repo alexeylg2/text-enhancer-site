@@ -659,6 +659,14 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (74)", date: "2026-11-06", items: [
+    { kind: "new",
+      ua: "Harno сам повідомить про нову версію: сповіщення macOS із кнопкою «Оновити», одне на версію й не частіше ніж раз на тиждень. Дозвіл macOS запитає перед першим сповіщенням. Вимкнути можна в «Налаштування» → «Основні».",
+      en: "Harno now tells you when a new version is out: a macOS notification with an Update button, one per version and at most one a week. macOS asks for permission before the first one. You can turn it off in Settings → General." },
+    { kind: "improved",
+      ua: "Версія, кнопка оновлення й посилання на TEHNOKRAT тепер угорі «Основних» налаштувань.",
+      en: "The version, the update button and the TEHNOKRAT link are now at the top of Settings → General." },
+  ] },
   { v: "0.5.0 (72)", date: "2026-11-06", items: [
     { kind: "new",
       ua: "Переклад оновлюється під час введення: вибравши стиль-переклад, змінюйте текст ліворуч, і за секунду після останнього натискання праворуч буде новий переклад. Вимкнути можна в «Налаштування» → «Моделі» → «Генерація».",
