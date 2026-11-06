@@ -174,6 +174,15 @@ header nav { margin-left: auto; display: flex; align-items: center; gap: 8px; }
 }
 .step h3 { font-size: 21px; margin-bottom: 6px; }
 .step p { margin: 0; color: var(--muted); }
+.keys {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px; align-items: center; margin-top: 20px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 28px;
+}
+.keys h3 { font-size: 21px; margin-bottom: 6px; }
+.keys p { margin: 0; color: var(--muted); }
+.keys ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.keys li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: baseline; color: var(--muted); }
+.keys li kbd { justify-self: start; }
 
 /* Кейсы */
 #cases { padding-top: 40px; }
@@ -298,7 +307,7 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
 
 @media (max-width: 900px) {
   section { padding: 72px 0; }
-  .steps, .features { grid-template-columns: 1fr; }
+  .steps, .features, .keys { grid-template-columns: 1fr; }
   .install { grid-template-columns: 1fr 1fr; }
   .case, .case:nth-of-type(even) { grid-template-columns: 1fr; gap: 28px; padding: 40px 0; }
   .case:nth-of-type(even) .case-text { order: 0; }
@@ -390,6 +399,18 @@ footer .links { display: flex; gap: 22px; flex-wrap: wrap; }
           <h3 data-i18n="how.3.title">Натисніть <kbd>⌘↩</kbd></h3>
           <p data-i18n="how.3.text">Результат стане на місце виділеного тексту — там, де ви писали.</p>
         </div>
+      </div>
+      <div class="keys">
+        <div>
+          <h3 data-i18n="how.keys.title">Руки на клавіатурі</h3>
+          <p data-i18n="how.keys.text">Від <kbd>⌘T</kbd> до готового тексту — без миші. Ось ще кілька клавіш у вікні Harno:</p>
+        </div>
+        <ul>
+          <li><kbd>⌘E</kbd> <span data-i18n="how.keys.e">Обробити результат іншим стилем</span></li>
+          <li><kbd>⌘K</kbd> <span data-i18n="how.keys.k">Очистити вихідний текст</span></li>
+          <li><kbd>⇧⌘C</kbd> <span data-i18n="how.keys.c">Скопіювати результат і закрити</span></li>
+          <li><kbd>Esc</kbd> <span data-i18n="how.keys.esc">Закрити вікно</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -887,6 +908,12 @@ const EN = {
   "how.2.text": "A window opens with your text — pick a style with <span class='nowrap'><kbd>⌘1</kbd>…<kbd>⌘9</kbd></span>.",
   "how.3.title": "Press <kbd>⌘↩</kbd>",
   "how.3.text": "The result replaces the selected text — right where you were typing.",
+  "how.keys.title": "Hands on the keyboard",
+  "how.keys.text": "From <kbd>⌘T</kbd> to finished text without touching the mouse. A few more keys in the Harno window:",
+  "how.keys.e": "Process the result with another style",
+  "how.keys.k": "Clear the original text",
+  "how.keys.c": "Copy the result and close",
+  "how.keys.esc": "Close the window",
   "cases.title": "One app, many jobs",
   "cases.lead": "A style is a ready-made instruction for the model. Here are six examples — and you can create your own in a minute.",
   "s.1": "Grammar", "s.2": "Business style", "s.3": "Translate EN", "s.4": "Translate UA", "s.5": "Reply to customer", "s.6": "Shakespeare",
