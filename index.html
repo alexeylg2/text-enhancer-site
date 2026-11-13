@@ -680,6 +680,14 @@ const FEEDBACK = "https://tally.so/r/M11B7E";
 // «Що нового»: новые версии — сверху. kind: new — новое, improved — улучшено, fixed — исправлено.
 // Пишем для пользователей, а не о коде; служебные релизы без заметных изменений не добавляем.
 const CHANGES = [
+  { v: "0.5.0 (83)", date: "2026-11-13", items: [
+    { kind: "fixed",
+      ua: "У браузерах і програмах на Chromium (Chrome, Comet, Arc, застосунки на Electron) «Замінити» та <kbd>⌘↩</kbd> іноді нічого не вставляли — наприклад, в оголошення на OLX. Тепер Harno перевіряє, що сторінка справді прийняла текст, і за потреби миттєво повторює вставку. Якщо все вийшло з першого разу, затримки немає.",
+      en: "In browsers and apps built on Chromium (Chrome, Comet, Arc, Electron apps), Replace and <kbd>⌘↩</kbd> sometimes pasted nothing — for example, into a listing on OLX. Harno now checks that the page actually took the text and instantly tries again if needed. When the first paste works, there's no delay." },
+    { kind: "improved",
+      ua: "Менеджери буфера обміну більше не заважають вставці, а ті, що дотримуються загальної домовленості (Maccy, Paste та інші), не зберігають в історію тимчасовий вміст буфера Harno.",
+      en: "Clipboard managers no longer get in the way of pasting, and those that follow the common convention (Maccy, Paste and others) no longer save Harno's temporary clipboard contents to their history." },
+  ] },
   { v: "0.5.0 (81)", date: "2026-11-13", items: [
     { kind: "fixed",
       ua: "Кнопка «Замінити» іноді нічого не вставляла — наприклад, у чат на сайті, — хоча <kbd>⌘↩</kbd> спрацьовував. Тепер Harno чекає, поки програма, з якої взято текст, знову стане активною, і лише тоді вставляє результат. Якщо вона так і не відкрилася, результат залишається в буфері обміну (пролунає сигнал) — вставте його <kbd>⌘V</kbd>.",
